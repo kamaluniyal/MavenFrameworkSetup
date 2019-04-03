@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="MemailTestAutomation" duration-ms="38253" started-at="2019-04-03T13:00:10Z" finished-at="2019-04-03T13:00:48Z">
+    <groups>
+    </groups>
+    <test name="MemailTestAutomation" duration-ms="38253" started-at="2019-04-03T13:00:10Z" finished-at="2019-04-03T13:00:48Z">
+      <class name="com.qa.automation.tests.LoginTest">
+        <test-method status="PASS" signature="initialSetup()[pri:0, instance:com.qa.automation.tests.LoginTest@1324409e]" name="initialSetup" is-config="true" duration-ms="35993" started-at="2019-04-03T18:30:10Z" finished-at="2019-04-03T18:30:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialSetup -->
+        <test-method status="PASS" signature="loginWithCorrectCredentials()[pri:0, instance:com.qa.automation.tests.LoginTest@1324409e]" name="loginWithCorrectCredentials" duration-ms="72" started-at="2019-04-03T18:30:46Z" finished-at="2019-04-03T18:30:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithCorrectCredentials -->
+        <test-method status="PASS" signature="loginWithInvalidPassword()[pri:0, instance:com.qa.automation.tests.LoginTest@1324409e]" name="loginWithInvalidPassword" duration-ms="1" started-at="2019-04-03T18:30:46Z" finished-at="2019-04-03T18:30:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithInvalidPassword -->
+        <test-method status="PASS" signature="loginWithInvalidUser()[pri:0, instance:com.qa.automation.tests.LoginTest@1324409e]" name="loginWithInvalidUser" duration-ms="2059" started-at="2019-04-03T18:30:46Z" finished-at="2019-04-03T18:30:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithInvalidUser -->
+        <test-method status="PASS" signature="endTest()[pri:0, instance:com.qa.automation.tests.LoginTest@1324409e]" name="endTest" is-config="true" duration-ms="0" started-at="2019-04-03T18:30:48Z" finished-at="2019-04-03T18:30:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endTest -->
+      </class> <!-- com.qa.automation.tests.LoginTest -->
+    </test> <!-- MemailTestAutomation -->
+  </suite> <!-- MemailTestAutomation -->
+</testng-results>

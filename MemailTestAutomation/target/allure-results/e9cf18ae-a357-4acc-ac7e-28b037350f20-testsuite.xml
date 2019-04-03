@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:test-suite start="1554295933732" stop="1554295955311" version="1.4.17" xmlns:ns2="urn:model.allure.qatools.yandex.ru">
+    <name>MemailTestAutomation : MemailTestAutomation</name>
+    <title>MemailTestAutomation : MemailTestAutomation</title>
+    <test-cases>
+        <test-case start="1554295955211" stop="1554295955211" status="passed">
+            <name>loginWithCorrectCredentials</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="host" value="NDADEVPC158"/>
+                <label name="thread" value="28128@NDADEVPC158.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1554295955258" stop="1554295955258" status="passed">
+            <name>loginWithInvalidPassword</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="host" value="NDADEVPC158"/>
+                <label name="thread" value="28128@NDADEVPC158.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1554295955258" stop="1554295955258" status="passed">
+            <name>loginWithInvalidUser</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="host" value="NDADEVPC158"/>
+                <label name="thread" value="28128@NDADEVPC158.main(1)"/>
+            </labels>
+        </test-case>
+    </test-cases>
+    <labels>
+        <label name="framework" value="TestNG"/>
+        <label name="language" value="JAVA"/>
+    </labels>
+</ns2:test-suite>
