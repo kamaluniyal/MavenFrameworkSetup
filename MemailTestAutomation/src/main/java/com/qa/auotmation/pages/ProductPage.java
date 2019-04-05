@@ -16,8 +16,11 @@ public class ProductPage extends PageBase {
 	@FindBy(xpath="//*[@id='idSIButton9']")
 	public WebElement login ;
 	
+	@FindBy(xpath="//*[@id='mainbody']/header/div[1]/div/div/div/ul[2]/li[1]/a")
+	public WebElement signIn;
+	
 	@FindBy(xpath="")
-	public WebElement remember ;
+	public WebElement registerLink;
 	
 	
 public ProductPage navigate(String url){

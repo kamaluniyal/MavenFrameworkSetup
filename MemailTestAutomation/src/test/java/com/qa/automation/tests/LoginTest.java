@@ -11,38 +11,66 @@ import com.qa.auotmation.pages.ProductPage;
 public class LoginTest extends ProductTest {
 	
 	LoginPage login ;
-	ProductPage test ;
+	ProductPage memail ;
 	
 	@BeforeClass
 	public void initialSetup() throws Exception {
-				
-		test= setupEnvironment();
+		
+		System.out.println("Start test :*******************************"
+				+ "********************  LoginTest  *******************************"
+				+ "***************************************************");	
+		memail= setupEnvironment();
+		//do sign in before calling login page  
+		memail.clickonElement(memail.signIn,"Memail Sign-in button");
+		// wait for object
+		Thread.sleep(5000);
 		login = new LoginPage(driver);
 		
 	}
 	
 	
-	@Test
+	@Test(priority=0)
 	public void loginWithInvalidUser() throws Exception {
-		login.testdriver();	
+		System.out.println("Starting test :::::::::: loginWithInvalidUser ::::::::::");
+		String username = "kamal";
+		String password = "password";
+		login.setUserNameAndPassword(username, password);
+		login.clickonLogin();
+		Thread.sleep(20000);
+		System.out.println("Ending test :::::::::: loginWithInvalidUser ::::::::::");
 	}
 	
 	
-	@Test
+	@Test(priority=1)
 	public void loginWithInvalidPassword() throws Exception {
-				
+		System.out.println("Starting test :::::::::: loginWithInvalidPassword ::::::::::");
+		System.out.println("...");
+		System.out.println("...");
+		System.out.println("...");
+		System.out.println("...");
+		System.out.println("...");		
+		System.out.println("Ending test :::::::::: loginWithInvalidPassword ::::::::::");
 	}
 	
 	
-	@Test
+	@Test(priority=2)
 	public void loginWithCorrectCredentials() throws Exception {
-				
+		System.out.println("Starting test :::::::::: loginWithCorrectCredentials ::::::::::");
+		System.out.println("...");
+		System.out.println("...");
+		System.out.println("...");
+		System.out.println("...");
+		System.out.println("...");
+		System.out.println("Ending test :::::::::: loginWithCorrectCredentials ::::::::::");	
 	}
 	
 	
 	@AfterClass
 	public void endTest(){
-		//driver.quit();
+		System.out.println("End test :*******************************"
+				+ "********************  LoginTest  *******************************"
+				+ "***************************************************");	
+		driver.quit();
 		
 		
 	}
