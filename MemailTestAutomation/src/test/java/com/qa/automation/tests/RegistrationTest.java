@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import com.qa.auotmation.pages.LoginPage;
 import com.qa.auotmation.pages.ProductPage;
 import com.qa.auotmation.pages.RegistrationPage;
+import com.qa.automation.utils.Utils;
 
 public class RegistrationTest extends ProductTest {
 	
@@ -23,8 +24,7 @@ public class RegistrationTest extends ProductTest {
 		memail= setupEnvironment();
 		memail.clickonElement(memail.registerLink, "memail registration link");
 		Thread.sleep(3000);
-		registration = new RegistrationPage(driver);
-		
+		registration = new RegistrationPage(driver);	
 		
 	}
 	
@@ -32,9 +32,17 @@ public class RegistrationTest extends ProductTest {
 	@Test(priority=0)
 	public void registerUser() throws Exception {
 		System.out.println("Starting test :::::::::: registerUser ::::::::::");
-		registration.setUserNameAndPassword("test","test123");
-		registration.clickonContinue();	
+		String userName = "AutomationTesting_"+Utils.getRandomIntNumber();		
+		registration.setUserNameAndPassword(userName,propertyReader.getFieldValue("MemailRegistrationPassword"));
+		registration.clickonContinue();
 		Thread.sleep(3000);
+		if(!registration.isExistsUsernameError()){
+			memail.verifyElementText(memail.loggedInUser,"Logged_In_User","welcome, "+userName,false);
+		} 
+		else{
+			System.out.println("Unable to register as username is not available");
+		}	
+		
 		System.out.println("Ending test :::::::::: registerUser ::::::::::");
 	}
 }

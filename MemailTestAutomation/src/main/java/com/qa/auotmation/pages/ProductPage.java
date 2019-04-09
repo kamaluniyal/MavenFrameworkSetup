@@ -22,6 +22,10 @@ public class ProductPage extends PageBase {
 	@FindBy(xpath="//*[@id='mainbody']/header/div[1]/div/div/div/ul[2]/li[2]/a")
 	public WebElement registerLink;
 	
+	@FindBy(xpath="//*[@id='mainbody']/header//ul[contains(@class,'navbar-right')]//a[@href='/Dashboard']")
+	public WebElement loggedInUser;
+	
+	
 	
 public ProductPage navigate(String url){
 		
@@ -35,7 +39,7 @@ public ProductPage navigate(String url){
 	
 	public void login(String username , String password) throws InterruptedException{
 		
-		System.out.println("in login");
+		System.out.println("Logging in ");
 		id.sendKeys(username);
 		login.click();
 		Thread.sleep(5000);

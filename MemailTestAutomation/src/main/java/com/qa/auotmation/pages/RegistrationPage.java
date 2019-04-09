@@ -20,14 +20,22 @@ public class RegistrationPage extends ProductPage {
 	@FindBy(xpath="//button[@type='submit']")
 	private WebElement continueButton ;
 	
+	@FindBy(xpath="")
+	private WebElement userExistError ;
+	
 	
 	public void setUserNameAndPassword(String username,String password){
 		enterText(this.username,"Username",username);
 		enterText(this.password,"Password",password);
+		enterText(this.confirmPassword,"Confirm_Password",password);
 	}
 	
 	public void clickonContinue(){
 		clickonElement(continueButton,"memail_registration_continue");
+	}
+	
+	public boolean isExistsUsernameError(){
+		return ( isElementDisplayed(userExistError,"username not available"));
 	}
 	
 	
