@@ -12,7 +12,8 @@ public class GlobalDriver {
 		//System.setProperty("WebDriver.chrome.driver",this.getClass().getClassLoader().getResource("chromedriver").getFile());
 		//driver = new ChromeDriver();
 		System.out.println("Initializing browser session");
-		System.setProperty("webdriver.chrome.driver","C:\\Projects\\Java Selenium\\drivers\\chromedriver.exe");
+		//System.setProperty("webdriver.chrome.driver","C:\\Projects\\Java Selenium\\drivers\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver",this.getClass().getClassLoader().getResource("chromedriver.exe").getFile());
 		driver = new ChromeDriver();
 		return driver;
 	}

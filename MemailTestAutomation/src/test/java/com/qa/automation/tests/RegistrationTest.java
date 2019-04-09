@@ -8,7 +8,6 @@ import com.qa.auotmation.pages.ProductPage;
 import com.qa.auotmation.pages.RegistrationPage;
 
 public class RegistrationTest extends ProductTest {
-
 	
 
 	RegistrationPage registration;
@@ -24,8 +23,7 @@ public class RegistrationTest extends ProductTest {
 		memail= setupEnvironment();
 		memail.clickonElement(memail.registerLink, "memail registration link");
 		Thread.sleep(3000);
-		RegistrationPage register = new RegistrationPage(driver);
-		
+		registration = new RegistrationPage(driver);
 		
 		
 	}
@@ -35,8 +33,8 @@ public class RegistrationTest extends ProductTest {
 	public void registerUser() throws Exception {
 		System.out.println("Starting test :::::::::: registerUser ::::::::::");
 		registration.setUserNameAndPassword("test","test123");
-		registration.clickonRegister();
-		registration.verifyErrorMessage("test");
+		registration.clickonContinue();	
+		Thread.sleep(3000);
 		System.out.println("Ending test :::::::::: registerUser ::::::::::");
 	}
 }

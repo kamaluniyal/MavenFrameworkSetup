@@ -19,7 +19,7 @@ public class ProductPage extends PageBase {
 	@FindBy(xpath="//*[@id='mainbody']/header/div[1]/div/div/div/ul[2]/li[1]/a")
 	public WebElement signIn;
 	
-	@FindBy(xpath="")
+	@FindBy(xpath="//*[@id='mainbody']/header/div[1]/div/div/div/ul[2]/li[2]/a")
 	public WebElement registerLink;
 	
 	

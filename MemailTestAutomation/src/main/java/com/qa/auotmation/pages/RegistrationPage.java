@@ -16,11 +16,9 @@ public class RegistrationPage extends ProductPage {
 	@FindBy(xpath="//*[@id='ConfirmPassword']")
 	private WebElement confirmPassword ;
 	
-	@FindBy(xpath="//*[@id='Password-error']/div/p")
-	private WebElement errorMessage ;
-	
-	@FindBy(xpath="")
-	private WebElement registerButton ;
+		
+	@FindBy(xpath="//button[@type='submit']")
+	private WebElement continueButton ;
 	
 	
 	public void setUserNameAndPassword(String username,String password){
@@ -28,12 +26,8 @@ public class RegistrationPage extends ProductPage {
 		enterText(this.password,"Password",password);
 	}
 	
-	public void clickonRegister(){
-		clickonElement(registerButton,"memail_register");
-	}
-	
-	public void verifyErrorMessage(String expectedErrorMsg){
-		verifyElementText(errorMessage,"Error message",expectedErrorMsg);
+	public void clickonContinue(){
+		clickonElement(continueButton,"memail_registration_continue");
 	}
 	
 	

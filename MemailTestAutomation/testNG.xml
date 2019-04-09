@@ -5,6 +5,7 @@
 		<test   name="MemailTestAutomation">
 		<classes>			
 		     <class name ="com.qa.automation.tests.LoginTest"/>
+		     <class name ="com.qa.automation.tests.RegistrationTest"/>
 		     
 		</classes>
 	</test>	

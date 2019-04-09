@@ -6,13 +6,14 @@ import org.testng.annotations.Test;
 
 import com.qa.auotmation.pages.LoginPage;
 import com.qa.auotmation.pages.ProductPage;
+import com.qa.automation.common.PropertyReader;
 
 
 public class LoginTest extends ProductTest {
 	
 	LoginPage login ;
 	ProductPage memail ;
-	
+		
 	@BeforeClass
 	public void initialSetup() throws Exception {
 		
@@ -32,11 +33,12 @@ public class LoginTest extends ProductTest {
 	@Test(priority=0)
 	public void loginWithInvalidUser() throws Exception {
 		System.out.println("Starting test :::::::::: loginWithInvalidUser ::::::::::");
-		String username = "kamal";
-		String password = "password";
+		String username = propertyReader.getFieldValue("MemailUserName");
+		String password = propertyReader.getFieldValue("MemailUserPassword")+"1234";
 		login.setUserNameAndPassword(username, password);
 		login.clickonLogin();
 		Thread.sleep(20000);
+		login.verifyErrorMessage("LOGIN FAILED. Check your login credentials and try again.");
 		System.out.println("Ending test :::::::::: loginWithInvalidUser ::::::::::");
 	}
 	
