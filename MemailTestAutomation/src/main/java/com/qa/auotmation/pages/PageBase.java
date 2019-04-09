@@ -33,16 +33,25 @@ public class PageBase {
 		}
 	}
 	
-	public void verifyElementText(WebElement element,String description , String expectedText){
+	public void verifyElementText(WebElement element,String description , String expectedText,boolean ignoreSpace){
+		String actualText;
 		try{
 			System.out.println("Verifying text of : "+description);
-			if(expectedText.equals(element.getText())){
+			if(ignoreSpace){
+				actualText=element.getText().trim();}
+			else{
+				actualText=element.getText();
+				}
+			
+			//ignoreSpace?actualText=element.getText().trim():actualText=element.getText();
+			
+			if(expectedText.equals(actualText)){
 				System.out.println("Text verification PASSED");
 			}
 			else{
 				System.out.println("Text verification FAILED");
 				System.out.println("Expected text : "+expectedText);
-				System.out.println("Actual text : "+element.getText());
+				System.out.println("Actual text : "+actualText);
 			}
 			
 		}
@@ -50,7 +59,7 @@ public class PageBase {
 			System.out.println("Error verifying text of"+description);
 			System.out.println("Error description : "+e.getMessage());
 		}
-	}
+	}	
 	
 	
 	PageBase(WebDriver driver){

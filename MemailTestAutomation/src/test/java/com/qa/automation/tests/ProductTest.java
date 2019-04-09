@@ -1,23 +1,30 @@
 package com.qa.automation.tests;
 
 import com.qa.automation.common.GlobalDriver;
+import com.qa.automation.common.PropertyReader;
+
+import java.io.IOException;
+
 import com.qa.auotmation.pages.ProductPage;
 
 public class ProductTest extends TestBase {
 	
 	ProductPage page ;
 	GlobalDriver gDriver ;
+	PropertyReader propertyReader ;
 	
-	public ProductPage setupEnvironment() throws InterruptedException{
+	public ProductPage setupEnvironment() throws InterruptedException, IOException{
 		
 		gDriver = new GlobalDriver();
 		driver = gDriver.init();
+		propertyReader = new PropertyReader("Configuration.properties");
 				
-		String username="pratiksha.Naithani@wikaad.com" ;
-		String password="app7pk@$3%" ;
+		String username=propertyReader.getFieldValue("AzureLoginUserName");
+		String password=propertyReader.getFieldValue("AzureUserPassword");
+		String url =propertyReader.getFieldValue("URL");
 		
 		page = new ProductPage(driver);
-		page.navigate("https://memail.azurewebsites.net");
+		page.navigate(url);
 		page.login(username ,password);
 		
 		return page ;

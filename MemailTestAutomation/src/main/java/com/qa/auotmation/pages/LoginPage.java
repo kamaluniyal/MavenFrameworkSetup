@@ -17,6 +17,8 @@ public class LoginPage extends ProductPage {
 	@FindBy(xpath="//*[@id='login_form']/button")
 	private WebElement meMailloginButton ;
 	
+	@FindBy(xpath="//*[@id='login_form']/div[@role='alert']/p")
+	private WebElement errorMessage ;
 	
 	public void setUserNameAndPassword(String username,String password){
 		enterText(this.username,"Username",username);
@@ -25,6 +27,10 @@ public class LoginPage extends ProductPage {
 	
 	public void clickonLogin(){
 		clickonElement(meMailloginButton,"memail_loginButton");
+	}
+	
+	public void verifyErrorMessage(String expectedMessage){
+		verifyElementText(errorMessage,"Error messaage",expectedMessage,true);
 	}
 	
 	
