@@ -33,11 +33,11 @@ public class LoginTest extends ProductTest {
 	@Test(priority=0)
 	public void loginWithInvalidUser() throws Exception {
 		System.out.println("Starting test :::::::::: loginWithInvalidUser ::::::::::");
-		String username = propertyReader.getFieldValue("MemailUserName");
-		String password = propertyReader.getFieldValue("MemailUserPassword")+"1234";
+		String username = propertyReader.getFieldValue("MemailUserName")+"123";
+		String password = propertyReader.getFieldValue("MemailUserPassword");
 		login.setUserNameAndPassword(username, password);
 		login.clickonLogin();
-		Thread.sleep(20000);
+		Thread.sleep(500);
 		login.verifyErrorMessage("LOGIN FAILED. Check your login credentials and try again.");
 		System.out.println("Ending test :::::::::: loginWithInvalidUser ::::::::::");
 	}
@@ -46,11 +46,12 @@ public class LoginTest extends ProductTest {
 	@Test(priority=1)
 	public void loginWithInvalidPassword() throws Exception {
 		System.out.println("Starting test :::::::::: loginWithInvalidPassword ::::::::::");
-		System.out.println("...");
-		System.out.println("...");
-		System.out.println("...");
-		System.out.println("...");
-		System.out.println("...");		
+		String username = propertyReader.getFieldValue("MemailUserName");
+		String password = propertyReader.getFieldValue("MemailUserPassword")+"123";
+		login.setUserNameAndPassword(username, password);
+		login.clickonLogin();
+		Thread.sleep(500);
+		login.verifyErrorMessage("LOGIN FAILED. Check your login credentials and try again.");		
 		System.out.println("Ending test :::::::::: loginWithInvalidPassword ::::::::::");
 	}
 	
@@ -58,11 +59,12 @@ public class LoginTest extends ProductTest {
 	@Test(priority=2)
 	public void loginWithCorrectCredentials() throws Exception {
 		System.out.println("Starting test :::::::::: loginWithCorrectCredentials ::::::::::");
-		System.out.println("...");
-		System.out.println("...");
-		System.out.println("...");
-		System.out.println("...");
-		System.out.println("...");
+		String username = propertyReader.getFieldValue("MemailUserName");
+		String password = propertyReader.getFieldValue("MemailUserPassword");
+		login.setUserNameAndPassword(username, password);
+		login.clickonLogin();
+		Thread.sleep(5000);
+		memail.verifyElementText(memail.loggedInUser,"Logged_In_User","welcome, "+username,false);
 		System.out.println("Ending test :::::::::: loginWithCorrectCredentials ::::::::::");	
 	}
 	

@@ -42,9 +42,7 @@ public class PageBase {
 			else{
 				actualText=element.getText();
 				}
-			
-			//ignoreSpace?actualText=element.getText().trim():actualText=element.getText();
-			
+						
 			if(expectedText.equals(actualText)){
 				System.out.println("Text verification PASSED");
 			}
@@ -58,6 +56,28 @@ public class PageBase {
 		catch(Exception e){
 			System.out.println("Error verifying text of"+description);
 			System.out.println("Error description : "+e.getMessage());
+		}
+	}
+	
+	public boolean isElementDisplayed(WebElement element,String description){
+		
+		try{
+			System.out.println("Checking element : "+description + " is displayed or not");
+									
+			if(element.isDisplayed()){
+				System.out.println("Element is visible");
+				return true;
+			}
+			else{
+				System.out.println("Element is not visible");
+				return false ;
+			}
+			
+		}
+		catch(Exception e){
+			System.out.println("Error verifying element"+description);
+			return false ;
+			
 		}
 	}	
 	
